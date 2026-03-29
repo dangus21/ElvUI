@@ -402,6 +402,7 @@ info.missingpp				= { category = "Power", description = "Displays the missing po
 info.name					= { category = "Names", description = "Displays the full name of the unit without any letter limitation" }
 info.offline				= { category = "Status", description = "Displays 'OFFLINE' if the unit is disconnected" }
 info.perhp					= { category = "Health", description = "Displays percentage HP without decimals or the % sign. You can display the percent sign by adjusting the tag to [perhp<%]." }
+info.perhpdecimal			= { category = "Health", description = "Displays percentage HP with one decimal place and without the % sign. You can display the percent sign by adjusting the tag to [perhpdecimal<%]." }
 info.perpp					= { category = "Power", description = "Displays the unit's percentage power without decimals" }
 info.plus					= { category = "Classification", description = "Displays the character '+' if the unit is an elite or rare-elite" }
 info.powercolor				= { category = "Colors", description = "Colors the power text based upon its type" }

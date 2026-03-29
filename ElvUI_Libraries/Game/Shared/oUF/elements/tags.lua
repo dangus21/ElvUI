@@ -373,6 +373,22 @@ tagFunctions.perhp = function(u)
 	end
 end
 
+tagFunctions.perhpdecimal = function(u)
+	if oUF.isRetail then
+		local ok, percent = pcall(UnitHealthPercent, u, true, ScaleTo100)
+		if ok then
+			return format('%.1f', percent)
+		end
+	else
+		local m = UnitHealthMax(u)
+		if(m == 0) then
+			return format('%.1f', 0)
+		else
+			return format('%.1f', UnitHealth(u) / m * 100)
+		end
+	end
+end
+
 tagFunctions.perpp = function(u)
 	if oUF.isRetail then
 		local ok, precent = pcall(UnitPowerPercent, u, nil, true, ScaleTo100)
@@ -591,6 +607,7 @@ local tagEvents = {
 	['name']                = 'UNIT_NAME_UPDATE',
 	['offline']             = 'UNIT_HEALTH UNIT_MAXHEALTH UNIT_CONNECTION PLAYER_FLAGS_CHANGED',
 	['perhp']               = 'UNIT_HEALTH UNIT_MAXHEALTH',
+	['perhpdecimal']        = 'UNIT_HEALTH UNIT_MAXHEALTH',
 	['perpp']               = 'UNIT_MAXPOWER UNIT_POWER_FREQUENT',
 	['plus']                = 'UNIT_CLASSIFICATION_CHANGED',
 	['powercolor']          = 'UNIT_DISPLAYPOWER',
